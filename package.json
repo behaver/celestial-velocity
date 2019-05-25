@@ -1,0 +1,36 @@
+{
+  "name": "@behaver/celestial-velocity",
+  "version": "1.0.0",
+  "description": "This pkg is biulded for calculating velocity of changable coordinate.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/behaver/celestial-velocity.git"
+  },
+  "keywords": [
+    "velocity"
+  ],
+  "author": "Sanwan, Dong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/behaver/celestial-velocity/issues"
+  },
+  "homepage": "https://github.com/behaver/celestial-velocity#readme",
+  "files": [],
+  "devDependencies": {
+    "@behaver/jdate": "^2.3.2",
+    "@behaver/solar-star-position": "^1.1.2",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  },
+  "dependencies": {
+    "@behaver/celestial-coordinate": "^1.8.3",
+    "@behaver/unary-toolkit": "^1.1.1"
+  }
+}
