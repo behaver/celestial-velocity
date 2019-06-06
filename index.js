@@ -19,7 +19,9 @@ class CelestialVelocity {
    * @param {PositionProvider} pos_provider 天体位置提供组件
    */
   constructor(pos_provider) {
-    this.private = {};
+    this.private = {
+      celestial: {}
+    };
 
     this.PositionProvider = pos_provider;
   }
@@ -41,11 +43,27 @@ class CelestialVelocity {
   }
 
   /**
+   * 设定 天球系统
+   * 
+   * @param  {String}            sys  天球系统名称缩写
+   * @param  {Object}            opts 天球系统参数选项
+   * @return {CelestialVelocity}      返回 this 引用
+   */
+  celestial(sys, opts) {
+    this.private.celestial = {
+      sys,
+      opts,
+    }
+
+    return this;
+  }
+
+  /**
    * 获取 速度向量
    * 
    * @param  {Number} options.t             儒略日时间
    * @param  {String} options.celSys        目标天球系统字串
-   * @param  {Object} options.celSysOptions 目标天球系统参数
+   * @param  {Object} options.celOpts       目标天球系统参数
    * @param  {String} options.coordSys      目标空间坐标系统字串
    * 
    * @return {Object}                       速度向量
@@ -53,9 +71,15 @@ class CelestialVelocity {
   get({
     t,
     celSys,
-    celSysOptions,
+    celOpts,
     coordSys,
   }) {
+    // 天球系统配置预设
+    if (celSys == undefined) {
+      celSys = this.private.celestial.sys;
+      celOpts = this.private.celestial.opts;
+    }
+
     let PosProvider = this.PositionProvider;
 
     // 构造求导原始函数 f
@@ -74,7 +98,7 @@ class CelestialVelocity {
         });
 
         // 转换至目标天球坐标
-        coord0 = CelSysSwitcher.to(celSys, celSysOptions);
+        coord0 = CelSysSwitcher.to(celSys, celOpts);
       }
 
       // 获取目标空间球坐标

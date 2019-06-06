@@ -24,7 +24,7 @@ describe('#CelestialVelocity', () => {
       let rc = CV.get({
         t: 2448908.5,
         celSys: 'eqc',
-        celSysOptions: {
+        celOpts: {
           withNutation: true,
         },
         coordSys: 'rc',

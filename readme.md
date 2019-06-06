@@ -47,6 +47,13 @@ let {
 
 * pos_provider 位置提供组件
 
+`celestial(sys, opts)`
+
+设定天球系统：
+
+* sys  天球系统名称缩写
+* opts 天球系统参数选项
+
 `get(options)`
 
 获取速度向量：
