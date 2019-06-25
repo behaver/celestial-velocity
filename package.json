@@ -25,12 +25,12 @@
   "files": [],
   "devDependencies": {
     "@behaver/jdate": "^2.3.2",
-    "@behaver/solar-star-position": "^1.1.2",
+    "@behaver/solar-star-locator": "^2.0.1",
     "chai": "^4.2.0",
     "mocha": "^6.1.4"
   },
   "dependencies": {
-    "@behaver/celestial-coordinate": "^1.8.3",
+    "@behaver/celestial-coordinate": "^1.9.1",
     "@behaver/unary-toolkit": "^1.1.1"
   }
 }

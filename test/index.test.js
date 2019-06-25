@@ -2,14 +2,17 @@
 
 const expect = require("chai").expect;
 const CelestialVelocity = require('../index');
-const { MoonPosition } = require('@behaver/solar-star-position');
+const { MoonLocator } = require('@behaver/solar-star-locator');
+const SolarStarLocator = require('@behaver/solar-star-locator/src/SolarStarLocator');
 const { JDateRepository } = require('@behaver/jdate');
+const { SystemSwitcher, CelestialLocator } = require('@behaver/celestial-coordinate');
 
 describe('#CelestialVelocity', () => {
   describe('#Verify', () => {
     it('Moon Geocentric Ecliptic Velocity.', () => {
-      let MoonPosProvider = new MoonPosition({ time: new JDateRepository }),
-          CV = new CelestialVelocity(MoonPosProvider);
+      let ML = new MoonLocator({ time: new JDateRepository }),
+          CV = new CelestialVelocity(ML);
+      // console.log(new CelestialLocator, (new SolarStarLocator) instanceof CelestialLocator);
 
       let {
         phi, // phi 方向角速度
