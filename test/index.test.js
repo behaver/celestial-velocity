@@ -10,7 +10,7 @@ const { SystemSwitcher, CelestialLocator } = require('@behaver/celestial-coordin
 describe('#CelestialVelocity', () => {
   describe('#Verify', () => {
     it('Moon Geocentric Ecliptic Velocity.', () => {
-      let ML = new MoonLocator({ time: new JDateRepository }),
+      let ML = new MoonLocator,
           CV = new CelestialVelocity(ML);
       // console.log(new CelestialLocator, (new SolarStarLocator) instanceof CelestialLocator);
 

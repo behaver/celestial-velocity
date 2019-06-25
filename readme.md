@@ -19,10 +19,10 @@ CelestialVelocity 是一个被创建用以计算天球内点位置坐标速度�
 
 ```js
 const CelestialVelocity = require('@behaver/celestial-velocity');
-const { MoonPosition } = require('@behaver/solar-star-position');
+const { MoonLocator } = require('@behaver/solar-star-locator');
 
-let MoonPosProvider = new MoonPosition,
-    CV = new CelestialVelocity(MoonPosProvider);
+let ML = new MoonLocator,
+    CV = new CelestialVelocity(ML);
 
 let {
   phi, // phi 方向角速度
@@ -37,15 +37,15 @@ let {
 
 ### 属性
 
-`PositionProvider` 位置提供组件
+`CelestialLocator` 天球坐标定位组件
 
 ### 方法
 
-`constructor(pos_provider)`
+`constructor(cel_locator)`
 
 构造函数：
 
-* pos_provider 位置提供组件
+* cel_locator 天球坐标定位组件
 
 `celestial(sys, opts)`
 
