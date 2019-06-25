@@ -1,6 +1,6 @@
 {
   "name": "@behaver/celestial-velocity",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "This pkg is biulded for calculating velocity of changable coordinate.",
   "main": "index.js",
   "directories": {
