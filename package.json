@@ -27,7 +27,7 @@
     "@behaver/jdate": "^2.3.2",
     "@behaver/solar-star-locator": "^2.0.1",
     "chai": "^4.2.0",
-    "mocha": "^6.1.4"
+    "mocha": "^10.2.0"
   },
   "dependencies": {
     "@behaver/celestial-coordinate": "^1.9.1",
